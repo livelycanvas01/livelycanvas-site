@@ -1,4 +1,4 @@
-# LivelyCanvas — starter site
+# The Lively Canvas — starter site
 
 Plain HTML/CSS/JS, no build step. Open `index.html` in a browser, or drag the
 whole folder into Netlify Drop / GitHub Pages / Vercel to go live in minutes.

@@ -1,4 +1,4 @@
-// LivelyCanvas — shared site behavior
+// The Lively Canvas — shared site behavior
 
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile nav toggle

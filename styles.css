@@ -1,17 +1,18 @@
 /* =========================================================
-   LivelyCanvas — design tokens (warm personal-blog theme)
+   The Lively Canvas — design tokens
+   (identity: round seal mark, Instrument Serif + IBM Plex Mono)
    ========================================================= */
 :root{
-  --canvas:      #FBF6F0;
-  --canvas-deep: #F3E9DE;
+  --canvas:      #FAF6EF;
+  --canvas-deep: #F0E7D6;
   --card:        #FFFFFF;
-  --ink:         #3A322C;
-  --ink-soft:    #8A7D71;
-  --ink-faint:   #B3A79A;
-  --line:        rgba(58,50,44,0.10);
+  --ink:         #2A241C;
+  --ink-soft:    #6E6656;
+  --ink-faint:   #97907F;
+  --line:        rgba(42,36,28,0.12);
 
-  --brand:       #C08078;  /* primary elegant accent — logo, CTAs, emphasis */
-  --brand-soft:  #F5E4E1;
+  --brand:       #B9754F;  /* primary accent — seal ring, CTAs, emphasis */
+  --brand-soft:  #F3E3D6;
 
   --rose:        #B4767E;  /* Parenting */
   --rose-soft:   #F3E1E3;
@@ -26,7 +27,8 @@
   --radius-lg: 14px;
   --max: 1180px;
 
-  --font-display: 'Fraunces', Georgia, serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
   --font-body: 'Jost', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -52,7 +54,7 @@ input{ font-family: inherit; }
 .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 32px; }
 
 .eyebrow{
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -71,13 +73,25 @@ input{ font-family: inherit; }
   display:flex; align-items:center; justify-content:space-between;
   padding: 26px 32px; max-width: var(--max); margin: 0 auto; gap: 24px;
 }
-.logo{
-  font-family: var(--font-display); font-style: italic; font-weight: 500;
-  font-size: 27px; letter-spacing: 0.01em; white-space: nowrap; color: var(--ink);
+.brand-seal{ display:inline-flex; align-items:center; gap:12px; white-space:nowrap; }
+.brand-seal .seal-ring{
+  width:40px; height:40px; border-radius:50%; flex:none;
+  border:1.2px solid var(--ink);
+  display:flex; align-items:center; justify-content:center;
 }
-.logo span{ color: var(--brand); font-style: italic; }
+.brand-seal .seal-ring-inner{
+  width:33px; height:33px; border-radius:50%;
+  border:1px solid var(--brand);
+  display:flex; align-items:center; justify-content:center;
+}
+.brand-seal .seal-letter{
+  font-family: var(--font-display); font-style: italic; font-size: 16px; line-height: 1; color: var(--ink);
+}
+.brand-seal .seal-word{
+  font-family: var(--font-display); font-size: 22px; letter-spacing: -0.005em; color: var(--ink);
+}
 
-.primary-nav{ display:flex; gap: 34px; }
+.primary-nav{ display:flex; gap: 34px; font-family: var(--font-mono); }
 .primary-nav a{
   font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;
   padding: 6px 2px; border-bottom: 1px solid transparent;
@@ -87,7 +101,7 @@ input{ font-family: inherit; }
 
 .header-actions{ display:flex; align-items:center; gap:14px; }
 .btn{
-  display:inline-flex; align-items:center; gap:8px;
+  display:inline-flex; align-items:center; gap:8px; font-family: var(--font-mono);
   font-size: 12.5px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
   padding: 12px 22px; border-radius: 999px; border: 1px solid var(--ink);
   transition: transform .15s ease, background .18s ease, color .18s ease, border-color .18s ease;
@@ -105,7 +119,7 @@ input{ font-family: inherit; }
 .nav-toggle span{ width:22px; height:1.5px; background:var(--ink); display:block; }
 .mobile-nav{ display:none; flex-direction:column; padding: 6px 32px 24px; border-bottom: 1px solid var(--line); }
 .mobile-nav.open{ display:flex; }
-.mobile-nav a{ padding: 14px 0; font-size:14px; font-weight:500; letter-spacing:.03em; text-transform:uppercase; border-bottom:1px solid var(--line); }
+.mobile-nav a{ padding: 14px 0; font-family: var(--font-mono); font-size:14px; font-weight:500; letter-spacing:.03em; text-transform:uppercase; border-bottom:1px solid var(--line); }
 .mobile-nav a:last-child{ border-bottom:none; }
 
 /* =========================================================
@@ -185,7 +199,8 @@ input{ font-family: inherit; }
 
 /* Category label pill (softer, minimal) */
 .pill{
-  display:inline-block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  display:inline-block; font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
   font-weight: 600; padding: 6px 13px; border-radius: 999px;
 }
 .pill.rose{ background: var(--rose-soft); color: var(--rose); }
@@ -214,7 +229,7 @@ input{ font-family: inherit; }
 .post-card h3{ font-family: var(--font-display); font-size: 19px; font-weight:500; margin: 0 0 10px; line-height:1.4; }
 .post-card h3 a:hover{ color: var(--brand); }
 .post-card p{ font-size: 14px; color: var(--ink-soft); margin: 0 0 12px; line-height:1.65; }
-.post-meta{ font-size: 11.5px; color: var(--ink-faint); letter-spacing: 0.03em; text-transform: uppercase; }
+.post-meta{ font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-faint); letter-spacing: 0.03em; text-transform: uppercase; }
 
 .center-cta{ text-align:center; margin-top: 48px; }
 
@@ -267,9 +282,10 @@ input{ font-family: inherit; }
    ========================================================= */
 .site-footer{ border-top: 1px solid var(--line); padding: 60px 0 32px; margin-top: 20px; }
 .footer-grid{ display:grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 44px; }
-.footer-brand .logo{ margin-bottom: 14px; display:inline-block; }
+.footer-brand .brand-seal{ margin-bottom: 14px; }
 .footer-brand p{ color: var(--ink-soft); font-size: 13.5px; max-width: 300px; line-height:1.7; }
 .footer-col h4{
+  font-family: var(--font-mono);
   font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight:600;
   color: var(--ink); margin: 0 0 16px;
 }
