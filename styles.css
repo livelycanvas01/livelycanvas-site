@@ -98,7 +98,8 @@ input{ font-family: inherit; }
 }
 .header-row{
   display:flex; align-items:center; justify-content:space-between;
-  padding: 18px 32px; max-width: var(--max); margin: 0 auto; gap: 24px;
+  padding: 14px 32px; max-width: var(--max); margin: 0 auto; gap: 24px;
+  border-top: 1px solid var(--line);
 }
 .brand-seal{ display:inline-flex; align-items:center; gap:14px; white-space:nowrap; }
 .brand-seal .seal-ring{
@@ -121,6 +122,32 @@ input{ font-family: inherit; }
 }
 .brand-seal .seal-word{
   font-family: var(--font-display); font-size: 24px; letter-spacing: -0.005em; color: var(--ink);
+}
+
+/* =========================================================
+   Header masthead — hero-scale lockup (exact "chosen direction"
+   primary seal: 116px/96px rings, divider, wordmark + tagline)
+   ========================================================= */
+.header-brand-row{
+  display:flex; justify-content:center;
+  padding: 36px 32px 28px; max-width: var(--max); margin: 0 auto;
+}
+.brand-seal--hero{ gap:28px; white-space:normal; }
+.brand-seal--hero .seal-ring{ width:116px; height:116px; border-width:2px; }
+.brand-seal--hero .seal-ring-inner{ width:96px; height:96px; gap:6px; }
+.brand-seal--hero .seal-the{
+  font-family: inherit; font-size:9px; letter-spacing:.32em; padding-left:.32em; color: var(--ink-soft);
+}
+.brand-seal--hero .seal-letter{ font-size:32px; }
+.brand-seal--hero .seal-divider{ width:38px; height:1px; background:#D8CDB8; }
+.brand-seal--hero .seal-canvas{
+  font-family: inherit; font-size:9px; letter-spacing:.28em; padding-left:.28em; color: var(--ink);
+}
+.brand-seal--hero .seal-text{ display:flex; flex-direction:column; gap:12px; }
+.brand-seal--hero .seal-word{ font-size:46px; line-height:1; letter-spacing:-.015em; }
+.brand-seal--hero .seal-tagline{
+  font-family: var(--font-mono); font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+  color:#5E574A; padding-left:.3em;
 }
 
 .primary-nav{ display:flex; gap: 34px; font-family: var(--font-mono); }
@@ -463,15 +490,10 @@ input{ font-family: inherit; }
   .commit-grid{ grid-template-columns: 1fr; }
   .benefit-list{ grid-template-columns: 1fr; }
 }
-@media (max-width: 900px){
-  /* The detailed seal lockup (62px ring + wordmark) needs more room than the header
-     has once the full primary nav is also on the row, so the nav collapses to the
-     hamburger earlier than the other breakpoints below. */
+@media (max-width: 720px){
   .primary-nav{ display:none; }
   .nav-toggle{ display:flex; }
   .header-actions .btn-ghost{ display:none; }
-}
-@media (max-width: 720px){
   .feature-grid{ grid-template-columns: 1fr; }
   .post-card-grid{ grid-template-columns: 1fr; }
   .footer-grid{ grid-template-columns: 1fr 1fr; gap:28px; }
@@ -480,16 +502,26 @@ input{ font-family: inherit; }
   .hero{ padding: 48px 0 56px; }
   .section{ padding: 48px 0; }
   .photo-collage{ grid-template-rows: repeat(3, 56px); }
+
+  /* Header masthead drops to the compact seal (same exact values as the footer
+     lockup) and loses its tagline line to fit phone/tablet widths. */
+  .header-brand-row{ padding: 28px 24px 20px; }
+  .brand-seal--hero{ gap:14px; }
+  .brand-seal--hero .seal-ring{ width:62px; height:62px; border-width:1.4px; }
+  .brand-seal--hero .seal-ring-inner{ width:51px; height:51px; gap:3px; }
+  .brand-seal--hero .seal-the{ font-size:6px; letter-spacing:.28em; padding-left:.28em; }
+  .brand-seal--hero .seal-letter{ font-size:16px; }
+  .brand-seal--hero .seal-divider{ width:20px; }
+  .brand-seal--hero .seal-canvas{ font-size:6px; letter-spacing:.24em; padding-left:.24em; }
+  .brand-seal--hero .seal-text{ gap:4px; }
+  .brand-seal--hero .seal-word{ font-size:22px; }
+  .brand-seal--hero .seal-tagline{ display:none; }
 }
-@media (max-width: 560px){
-  /* Below this width the header can't fit the seal + wordmark + solid CTA + hamburger
-     on one line without the pill button wrapping; the same CTA already lives in the
-     mobile-nav panel, so hide the header copy here instead of letting it wrap. */
-  .header-actions .btn-solid{ display:none; }
+@media (max-width: 400px){
+  /* Even the compact lockup is tight side-by-side under 400px; stack it instead. */
+  .brand-seal--hero{ flex-direction:column; text-align:center; gap:10px; }
+  .brand-seal--hero .seal-text{ align-items:center; }
   /* The footer's seal + wordmark no longer fits one line in a 2-column footer-grid
-     cell at phone widths, so let it wrap instead of overflowing the page. */
+     cell at the smallest phone widths, so let it wrap instead of overflowing. */
   .footer-brand .brand-seal{ white-space: normal; }
-}
-@media (max-width: 360px){
-  .brand-seal .seal-word{ font-size: 19px; }
 }
