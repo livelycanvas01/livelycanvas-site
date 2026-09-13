@@ -12,13 +12,15 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header">
   <div class="header-row">
     <a href="index.html" class="brand-seal">
-      <span class="seal-ring"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
+      <span class="seal-ring" aria-hidden="true"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
       <span class="seal-word">The Lively Canvas</span>
     </a>
-    <nav class="primary-nav">
+    <nav class="primary-nav" aria-label="Primary">
       <a href="category.html?cat=parenting">Parenting</a>
       <a href="category.html?cat=outdoor">Outdoor Lifestyle</a>
       <a href="category.html?cat=diy">Home &amp; DIY</a>
@@ -27,10 +29,10 @@
     <div class="header-actions">
       <a href="index.html#newsletter" class="btn btn-ghost btn-sm">Sign in</a>
       <a href="index.html#newsletter" class="btn btn-solid btn-sm">Join the list</a>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
     </div>
   </div>
-  <nav class="mobile-nav">
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
     <a href="category.html?cat=parenting">Parenting</a>
     <a href="category.html?cat=outdoor">Outdoor Lifestyle</a>
     <a href="category.html?cat=diy">Home &amp; DIY</a>
@@ -39,7 +41,7 @@
   </nav>
 </header>
 
-<main>
+<main id="main-content">
 
   <!-- HERO -->
   <section class="hero" style="padding-bottom:56px;">
@@ -102,18 +104,18 @@
 
       <div class="commit-grid">
         <div class="commit-card">
-          <div class="num-badge">1</div>
-          <h4>One post to start</h4>
+          <div class="num-badge" aria-hidden="true">1</div>
+          <h3>One post to start</h3>
           <p>No standing commitment required. Most contributors start with a single piece — we'll talk about more if it's a good fit on both sides.</p>
         </div>
         <div class="commit-card">
-          <div class="num-badge">2</div>
-          <h4>Original &amp; unpublished</h4>
+          <div class="num-badge" aria-hidden="true">2</div>
+          <h3>Original &amp; unpublished</h3>
           <p>Your piece needs to be new — not previously posted on your own blog, Medium, or anywhere else, before or after it runs here.</p>
         </div>
         <div class="commit-card">
-          <div class="num-badge">3</div>
-          <h4>1,200–2,000 words</h4>
+          <div class="num-badge" aria-hidden="true">3</div>
+          <h3>1,200–2,000 words</h3>
           <p>Specific and practical, written in first person where it fits. We'll edit for clarity but the voice should stay yours.</p>
         </div>
       </div>
@@ -193,7 +195,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="brand-seal">
-          <span class="seal-ring"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
+          <span class="seal-ring" aria-hidden="true"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
           <span class="seal-word">The Lively Canvas</span>
         </a>
         <p>A field guide for real households — parenting, outdoor life, home projects, and money, written by people who actually did the thing.</p>
@@ -204,7 +206,7 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Primary</h4>
+        <h3>Primary</h3>
         <ul>
           <li><a href="category.html?cat=parenting">Parenting</a></li>
           <li><a href="category.html?cat=outdoor">Outdoor Lifestyle</a></li>
@@ -213,7 +215,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Coming soon</h4>
+        <h3>Coming soon</h3>
         <ul>
           <li><a href="#">Lifestyle</a></li>
           <li><a href="#">Travel</a></li>
@@ -223,7 +225,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Site</h4>
+        <h3>Site</h3>
         <ul>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>

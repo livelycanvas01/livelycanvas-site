@@ -12,14 +12,16 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header">
   <div class="header-row">
     <a href="index.html" class="brand-seal">
-      <span class="seal-ring"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
+      <span class="seal-ring" aria-hidden="true"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
       <span class="seal-word">The Lively Canvas</span>
     </a>
-    <nav class="primary-nav">
-      <a href="category.html?cat=parenting" class="active">Parenting</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="category.html?cat=parenting" class="active" aria-current="page">Parenting</a>
       <a href="category.html?cat=outdoor">Outdoor Lifestyle</a>
       <a href="category.html?cat=diy">Home &amp; DIY</a>
       <a href="category.html?cat=finance">Finance</a>
@@ -27,10 +29,10 @@
     <div class="header-actions">
       <a href="#newsletter" class="btn btn-ghost btn-sm">Sign in</a>
       <a href="#newsletter" class="btn btn-solid btn-sm">Join the list</a>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
     </div>
   </div>
-  <nav class="mobile-nav">
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
     <a href="category.html?cat=parenting">Parenting</a>
     <a href="category.html?cat=outdoor">Outdoor Lifestyle</a>
     <a href="category.html?cat=diy">Home &amp; DIY</a>
@@ -39,7 +41,7 @@
   </nav>
 </header>
 
-<main>
+<main id="main-content">
 
   <!-- HERO — personal welcome + photo collage -->
   <section class="hero">
@@ -197,7 +199,8 @@
         <h2>Let's stay in touch</h2>
         <p>One email a week — the best new post plus two things we're trying at home. No spam, unsubscribe anytime.</p>
         <form class="newsletter-form" data-newsletter>
-          <input type="email" placeholder="you@email.com" required>
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="you@email.com" autocomplete="email" required>
           <button type="submit" class="btn btn-solid">Subscribe</button>
         </form>
         <p class="newsletter-confirm"></p>
@@ -217,7 +220,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="brand-seal">
-          <span class="seal-ring"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
+          <span class="seal-ring" aria-hidden="true"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
           <span class="seal-word">The Lively Canvas</span>
         </a>
         <p>A field guide for real households — parenting, outdoor life, home projects, and money, written by people who actually did the thing.</p>
@@ -228,7 +231,7 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Primary</h4>
+        <h3>Primary</h3>
         <ul>
           <li><a href="category.html?cat=parenting">Parenting</a></li>
           <li><a href="category.html?cat=outdoor">Outdoor Lifestyle</a></li>
@@ -237,7 +240,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Coming soon</h4>
+        <h3>Coming soon</h3>
         <ul>
           <li><a href="#">Lifestyle</a></li>
           <li><a href="#">Travel</a></li>
@@ -247,7 +250,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Site</h4>
+        <h3>Site</h3>
         <ul>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
