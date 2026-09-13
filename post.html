@@ -12,13 +12,15 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="site-header">
   <div class="header-row">
     <a href="index.html" class="brand-seal">
-      <span class="seal-ring"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
+      <span class="seal-ring" aria-hidden="true"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
       <span class="seal-word">The Lively Canvas</span>
     </a>
-    <nav class="primary-nav">
+    <nav class="primary-nav" aria-label="Primary">
       <a href="category.html?cat=parenting">Parenting</a>
       <a href="category.html?cat=outdoor">Outdoor Lifestyle</a>
       <a href="category.html?cat=diy">Home &amp; DIY</a>
@@ -27,10 +29,10 @@
     <div class="header-actions">
       <a href="#newsletter" class="btn btn-ghost btn-sm">Sign in</a>
       <a href="#newsletter" class="btn btn-solid btn-sm">Join the list</a>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
     </div>
   </div>
-  <nav class="mobile-nav">
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
     <a href="category.html?cat=parenting">Parenting</a>
     <a href="category.html?cat=outdoor">Outdoor Lifestyle</a>
     <a href="category.html?cat=diy">Home &amp; DIY</a>
@@ -39,7 +41,7 @@
   </nav>
 </header>
 
-<main class="wrap" style="padding-top:48px;">
+<main id="main-content" class="wrap" style="padding-top:48px;">
 
   <div class="post-layout">
     <article>
@@ -48,7 +50,7 @@
         <h1>The toddler bedtime routine we finally stopped fighting about</h1>
         <p class="lede">Three small changes turned our nightly meltdown into twenty quiet minutes — and none of them involved a sticker chart.</p>
         <div class="byline">
-          <span class="avatar">M</span>
+          <span class="avatar" aria-hidden="true">M</span>
           <div>
             <strong>Maya Ortiz</strong> · Aug 18, 2026 · 6 min read
           </div>
@@ -76,10 +78,10 @@
         <p>We were skeptical of gadgets, but a simple ok-to-wake clock ended the 5:45am wake-ups almost overnight. It was the one purchase in this whole process that paid for itself in the first week.</p>
 
         <div class="pick-box">
-          <div class="pick-swatch">★</div>
+          <div class="pick-swatch" aria-hidden="true">★</div>
           <div>
             <span class="pick-eyebrow">Our pick</span>
-            <h4>Ok-to-Wake Toddler Clock</h4>
+            <h3>Ok-to-Wake Toddler Clock</h3>
             <p>The single change with the best return — turns "is it morning yet?" into something she can answer herself.</p>
             <a href="#" class="btn btn-solid btn-sm">See current price</a>
           </div>
@@ -96,7 +98,7 @@
       </div>
 
       <div class="author-box">
-        <span class="avatar">M</span>
+        <span class="avatar" aria-hidden="true">M</span>
         <div>
           <h4>Maya Ortiz</h4>
           <p>Maya writes about the unglamorous parts of raising two kids under six. She lives outside Portland and has strong opinions about lunchboxes.</p>
@@ -127,10 +129,11 @@
 
     <aside class="sidebar">
       <div class="widget widget-newsletter" id="newsletter">
-        <h4>Join the list</h4>
+        <h3>Join the list</h3>
         <p>One email a week — the best new post, no spam.</p>
         <form data-newsletter>
-          <input type="email" placeholder="you@email.com" required>
+          <label for="sidebar-newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="sidebar-newsletter-email" name="email" placeholder="you@email.com" autocomplete="email" required>
           <button type="submit" class="btn btn-solid">Subscribe</button>
         </form>
         <p class="newsletter-confirm" style="font-size:12px;"></p>
@@ -139,25 +142,25 @@
       <div class="ad-slot rectangle">Ad space — 300×250</div>
 
       <div class="widget">
-        <h4>Popular this week</h4>
+        <h3>Popular this week</h3>
         <div class="widget-post">
-          <span class="num">01</span>
+          <span class="num" aria-hidden="true">01</span>
           <div>
-            <h5>How we budgeted for a one-income year</h5>
+            <h4>How we budgeted for a one-income year</h4>
             <span>Finance · 10 min</span>
           </div>
         </div>
         <div class="widget-post">
-          <span class="num">02</span>
+          <span class="num" aria-hidden="true">02</span>
           <div>
-            <h5>A car camping checklist that fits in one bin</h5>
+            <h4>A car camping checklist that fits in one bin</h4>
             <span>Outdoor · 7 min</span>
           </div>
         </div>
         <div class="widget-post">
-          <span class="num">03</span>
+          <span class="num" aria-hidden="true">03</span>
           <div>
-            <h5>Regrouting a shower without hiring anyone</h5>
+            <h4>Regrouting a shower without hiring anyone</h4>
             <span>Home &amp; DIY · 9 min</span>
           </div>
         </div>
@@ -174,7 +177,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="brand-seal">
-          <span class="seal-ring"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
+          <span class="seal-ring" aria-hidden="true"><span class="seal-ring-inner"><span class="seal-letter">L</span></span></span>
           <span class="seal-word">The Lively Canvas</span>
         </a>
         <p>A field guide for real households — parenting, outdoor life, home projects, and money, written by people who actually did the thing.</p>
@@ -185,7 +188,7 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Primary</h4>
+        <h3>Primary</h3>
         <ul>
           <li><a href="category.html?cat=parenting">Parenting</a></li>
           <li><a href="category.html?cat=outdoor">Outdoor Lifestyle</a></li>
@@ -194,7 +197,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Coming soon</h4>
+        <h3>Coming soon</h3>
         <ul>
           <li><a href="#">Lifestyle</a></li>
           <li><a href="#">Travel</a></li>
@@ -204,7 +207,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Site</h4>
+        <h3>Site</h3>
         <ul>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
